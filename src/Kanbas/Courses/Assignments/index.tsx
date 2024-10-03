@@ -1,53 +1,135 @@
+import { BsGripVertical, BsPlusLg } from "react-icons/bs";
+import { IoEllipsisVertical } from "react-icons/io5";
+import GreenCheckmark from "../Modules/GreenCheckmark";
+import Buttons from "./Buttons";
+import { RiFileEditFill } from "react-icons/ri";
+import { FaAngleDown } from "react-icons/fa";
+import "./styles.css";
+import { Link } from "react-router-dom";
+import Navigation from "./Navigation";
+
 export default function Assignments() {
   return (
-    <div id="wd-assignments">
-      <input id="wd-search-assignment" placeholder="Search for Assignments" />
-      <button id="wd-add-assignment-group">+ Group</button>
-      <button id="wd-add-assignment">+ Assignment</button>
-      <h3 id="wd-assignments-title">
-        ASSIGNMENTS 40% of Total <button>+</button>
-      </h3>
-      <ul id="wd-assignment-list">
-        <li className="wd-assignment-list-item">
-          <a
-            className="wd-assignment-link"
-            href="#/Kanbas/Courses/1234/Assignments/123"
-            style={{ color: "blue", textDecoration: "underline" }}
-          >
-            A1 - ENV + HTML
-          </a>
-          <p>
-            Multiple Modules |<strong> Not available until</strong> May 6 at
-            12:00am |<strong> Due</strong> May 13 at 11:59pm | 100 pts
-          </p>
-        </li>
-        <li className="wd-assignment-list-item">
-          <a
-            className="wd-assignment-link"
-            href="#/Kanbas/Courses/1234/Assignments/124"
-            style={{ color: "blue", textDecoration: "underline" }}
-          >
-            A2 - CSS + BOOTSTRAP
-          </a>
-          <p>
-            Multiple Modules |<strong> Not available until </strong> May 13 at
-            12:00am |<strong> Due </strong>May 20 at 11:59pm | 100 pts
-          </p>
-        </li>
-        <li className="wd-assignment-list-item">
-          <a
-            className="wd-assignment-link"
-            href="#/Kanbas/Courses/1234/Assignments/125"
-            style={{ color: "blue", textDecoration: "underline" }}
-          >
-            A3 - JAVASCRIPT + REACT
-          </a>
-          <p>
-            Multiple Modules | <strong>Not available until</strong> May 20 at
-            12:00am |<strong> Due</strong> May 27 at 11:59pm | 100 pts
-          </p>
-        </li>
-      </ul>
+    <div className="container mt-4">
+      <div className="mb-4">
+        <Buttons />
+      </div>
+
+      <div id="wd-assignments">
+        <div className="d-flex justify-content-between align-items-center bg-light p-3 border rounded mb-3">
+          <div className="d-flex align-items-center">
+            <BsGripVertical className="me-2" style={{ fontSize: "24px" }} />
+            <FaAngleDown className="me-2" style={{ fontSize: "20px" }} />
+            <h5 className="m-0">ASSIGNMENTS</h5>
+          </div>
+          <div className="d-flex align-items-center">
+            <div className="px-3 py-1 border border-secondary rounded-pill me-2">
+              40% of Total
+            </div>
+            <BsPlusLg className="fs-4 me-2" />
+            <IoEllipsisVertical className="fs-4" />
+          </div>
+        </div>
+
+        <div className="assignment-list border-start border-4 border-success ps-3">
+          <div className="d-flex align-items-center justify-content-between border-bottom py-3 mb-2">
+            <div className="d-flex align-items-center">
+              <BsGripVertical className="me-2" style={{ fontSize: "24px" }} />
+              <RiFileEditFill
+                className="me-3"
+                style={{ color: "green", fontSize: "24px" }}
+              />
+              <div>
+                <Link
+                  to="/Kanbas/Courses/1234/Assignments/Editor"
+                  className="text-decoration-none text-dark"
+                >
+                  <h6 className="m-0 fw-bold">A1</h6>
+                </Link>
+                <div className="text-muted">
+                  <span className="text-danger">Multiple Modules</span> |{" "}
+                  <span>
+                    <span className="fw-bold">Not available until</span> May 6
+                    at 12:00am |
+                  </span>
+                </div>
+                <div className="text-muted">
+                  <span className="fw-bold">Due </span>May 13 at 11:59pm | 100
+                  pts
+                </div>
+              </div>
+            </div>
+            <div className="d-flex align-items-center ms-3">
+              <GreenCheckmark />
+              <IoEllipsisVertical style={{ fontSize: "24px" }} />
+            </div>
+          </div>
+
+          <div className="d-flex align-items-center justify-content-between border-bottom py-3 mb-2">
+            <div className="d-flex align-items-center">
+              <BsGripVertical className="me-2" style={{ fontSize: "24px" }} />
+              <RiFileEditFill
+                className="me-3"
+                style={{ color: "green", fontSize: "24px" }}
+              />
+              <div>
+                <Link
+                  to="/Kanbas/Courses/1234/Assignments/Editor"
+                  className="text-decoration-none text-dark"
+                >
+                  <h6 className="m-0 fw-bold">A2</h6>
+                </Link>
+                <div className="text-muted">
+                  <span className="text-danger">Multiple Modules</span> |{" "}
+                  <span>
+                    <span className="fw-bold">Not available until </span>May 6
+                    at 12:00am |
+                  </span>
+                </div>
+                <div className="text-muted">
+                  <span className="fw-bold">Due </span>May 20 at 11:59pm | 100
+                  pts
+                </div>
+              </div>
+            </div>
+            <div className="d-flex align-items-center ms-3">
+              <GreenCheckmark />
+              <IoEllipsisVertical style={{ fontSize: "24px" }} />
+            </div>
+          </div>
+
+          <div className="d-flex align-items-center justify-content-between border-bottom py-3 mb-2">
+            <div className="d-flex align-items-center">
+              <BsGripVertical className="me-2" style={{ fontSize: "24px" }} />
+              <RiFileEditFill
+                className="me-3"
+                style={{ color: "green", fontSize: "24px" }}
+              />
+              <div>
+                <Link
+                  to="/Kanbas/Courses/1234/Assignments/Editor"
+                  className="text-decoration-none text-dark"
+                >
+                  <h6 className="m-0 fw-bold">A3</h6>
+                </Link>
+                <div className="text-muted">
+                  <span className="text-danger">Multiple Modules</span> |{" "}
+                  <span className="fw-bold">Not available until </span>{" "}
+                  <span>May 6 at 12:00am</span> |
+                </div>
+                <div className="text-muted">
+                  <span className="fw-bold">Due </span>May 27 at 11:59pm | 100
+                  pts
+                </div>
+              </div>
+            </div>
+            <div className="d-flex align-items-center ms-3">
+              <GreenCheckmark />
+              <IoEllipsisVertical style={{ fontSize: "24px" }} />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
